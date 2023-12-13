@@ -1,37 +1,37 @@
 const userModel = require('./models/gamesModel');
 
 const addGame = async (game, price, genre, rating, publisher) => {
-    let game = new gameModel();
-    game.game = game;
-   game.price = price;
-   game.genre = genre;
-   game.rating = rating;
-   game.publisher= publisher;
+    let games = new gameModel();
+    games.game = game;
+   games.price = price;
+   games.genre = genre;
+   games.rating = rating;
+   games.publisher= publisher;
 
-    await game.save()
-    return game;
+    await games.save()
+    return games;
 
 };
 
 
 const updateGame = async (_id, game, price, genre, rating, publisher) => {
-    let game = await gameModel.findById(_id);
-    game.game = game;
-   game.price = price;
-   game.genre = genre;
-   game.rating = rating;
-   game.publisher= publisher;
+    let games = await gameModel.findById(_id);
+    games.game = game;
+   games.price = price;
+   games.genre = genre;
+   games.rating = rating;
+   games.publisher= publisher;
 
-    await game.save()
-    return game;
+    await games.save()
+    return games;
   };
   const getGames = async () => {
     let games = await gameModel.find();
     return games;
   };
   const deleteGames = async (_id) => {
-    let game = await gameModel.findByIdAndDelete(_id);
-    return game;
+    let games = await gameModel.findByIdAndDelete(_id);
+    return games;
   };
 
   module.exports.addGame = addGame;
